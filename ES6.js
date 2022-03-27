@@ -317,5 +317,107 @@ console.log(p.getID()) // 10
 
 console.log(e.ggetID()); // 10
 
+
+
+// Primitive data types are passed by value whereas objects and arrays are passed by reference.
+
+// forEach() Method
+
+var arr = [1,2,3,4,5];
+
+arr.forEach(function(element,index,ar){
+    console.log(element,index,ar);
+});
+
+
+
+// Class
+
+class Human {
+    constructor(){
+        this.gender = "Male";
+    }
+
+    printGender(){
+        console.log(this.gender);
+    }
+}
+class Person extends Human{
+    constructor(){
+        super();
+        this.name="Varun";
+    }
+
+    printName(){
+        console.log(this.name);
+    }
+}
+
+var p = new Person();
+
+p.printName();
+p.printGender();
+
+
+
+// Modern Syntax of classes without Constructor in the class and with calling super in inherited class
+
+class Human{
+    gender ="Male";
+    printGender = ()=> console.log(this.gender);
+}
+
+class Person extends Human{
+
+    name = "Varun";
+    printName = () => console.log(this.name);
+}
+
+const p = new Person();
+
+p.printGender();
+p.printName();
+
+
+
+
+// forEach Loop
+const nums = [9,8,7,6,5,4,3,2,1];
+
+nums.forEach(function(n){
+
+    console.log(n*n);
+});
+
 */
 
+// Map 
+
+const arr = [1,2,3,4,5];
+
+const new_arr = arr.map(function(n){
+    return n*2;
+});
+
+console.log(new_arr);
+
+ const even = arr.map(function(n){
+    if(n%2==0){
+        return n;
+    }
+ })
+
+ console.log(even);
+
+ const obj = arr.map(function(n){
+
+    return (
+    {
+        value: n,
+        IsEven: n%2===0
+    })
+ });
+
+ console.log(obj);
+
+ // Note: Original Object remains Unchanged
