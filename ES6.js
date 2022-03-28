@@ -439,3 +439,19 @@ console.log(new_arr);
  }
 
  console.log(add(7,8));
+
+ const arr = [1,2,3,4,5];
+ const new_arr = arr.map(n => n*2);
+ console.log(new_arr);
+
+
+var parityList = arr.map(function(n){
+    if(n%2===0) return 'Even';
+    else
+     return 'Odd';
+ })
+console.log(parityList);
+
+// Now Converting obove function to Arrow Function
+parityList = arr.map(n => n%2===0?'Even':'Odd');
+console.log(parityList);
