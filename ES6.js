@@ -389,7 +389,7 @@ nums.forEach(function(n){
     console.log(n*n);
 });
 
-*/
+
 
 // Map 
 
@@ -421,3 +421,21 @@ console.log(new_arr);
  console.log(obj);
 
  // Note: Original Object remains Unchanged
+
+ */
+
+ // Arrow function
+
+ const square = x => x*x;
+ console.log(square(7));
+
+
+ const mul = (x,y) => x*y;
+ console.log(mul(2,4));
+
+ const add = (x,y)=>{
+    console.log(`Addition of the ${x} and ${y} is`);
+    return x+y;
+ }
+
+ console.log(add(7,8));
