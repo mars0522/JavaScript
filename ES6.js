@@ -422,7 +422,7 @@ console.log(new_arr);
 
  // Note: Original Object remains Unchanged
 
- */
+
 
  // Arrow function
 
@@ -455,3 +455,24 @@ console.log(parityList);
 // Now Converting obove function to Arrow Function
 parityList = arr.map(n => n%2===0?'Even':'Odd');
 console.log(parityList);
+
+*/
+
+// Find() Method
+
+var movies = ['The Shawshank Redemption','Forrest Gump','Schindler List','The Godfather','The Green Mile'];
+
+var res = movies.find(el => el.includes('Green'));
+console.log(res);
+
+movies = ["The fantastic Mr. fox",
+          "Mr. and Mrs. Smith",
+          "Mrs. Doubtfire",
+          "Mr. Deeds"];
+
+var movie = movies.find(movie => movie.includes("Mrs"));
+
+console.log(movie);
+
+movie = movies.find(movie => movie.indexOf('Mrs')===0);
+console.log(movie);
