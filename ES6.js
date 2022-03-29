@@ -382,6 +382,8 @@ p.printName();
 
 
 // forEach Loop
+
+// Accepts the callback function. Calls the function once per element in the array
 const nums = [9,8,7,6,5,4,3,2,1];
 
 nums.forEach(function(n){
@@ -392,6 +394,8 @@ nums.forEach(function(n){
 
 
 // Map 
+
+// Creates a new array with the results of calling a callback functing on every element in the array
 
 const arr = [1,2,3,4,5];
 
@@ -426,6 +430,8 @@ console.log(new_arr);
 
  // Arrow function
 
+ // Syntactically compact alternative to a regular function expressing.
+
  const square = x => x*x;
  console.log(square(7));
 
@@ -456,9 +462,11 @@ console.log(parityList);
 parityList = arr.map(n => n%2===0?'Even':'Odd');
 console.log(parityList);
 
-*/
+
 
 // Find() Method
+
+// Returns the value of the first element in the array that satisfies the provided testing function
 
 var movies = ['The Shawshank Redemption','Forrest Gump','Schindler List','The Godfather','The Green Mile'];
 
@@ -476,3 +484,48 @@ console.log(movie);
 
 movie = movies.find(movie => movie.indexOf('Mrs')===0);
 console.log(movie);
+
+const books = [
+                {
+                    title:"Good Omens",
+                    author:['Terry Protchett','Neil Gaimann'],
+                    rating: 4.25
+                },
+                {
+                    title:'Bone:The complete Edition',
+                    author:['Jeff Smitch'],
+                    rating:4.42
+                },
+                {
+                    title:'American Gods',
+                    author:['Neil Gaimann'],
+                    rating:4.11
+                },
+                {
+                    title:'A gentle in Moscow',
+                    author:['Amar Towles'],
+                    rating:4.36
+                }
+            ]
+
+const goodBook = books.find(b => b.rating >= 4.3);
+console.log(goodBook.author);
+
+const neil_book = books.find(b=> b.author.includes('Neil Gaimann'));
+
+console.log(neil_book.title);
+
+*/
+
+// filter() Method
+
+// Creates a new array with all elements that pass the test implemented by the provided function
+
+const arr = [1,2,3,4,5,6,7,8,9];
+
+const even = arr.filter(n => n%2===0);
+
+console.log(even);
+
+const odd = arr.filter(n=>n%2===1);
+console.log(odd);
