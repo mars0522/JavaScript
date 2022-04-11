@@ -485,6 +485,7 @@ console.log(movie);
 movie = movies.find(movie => movie.indexOf('Mrs')===0);
 console.log(movie);
 
+
 const books = [
                 {
                     title:"Good Omens",
@@ -515,7 +516,7 @@ const neil_book = books.find(b=> b.author.includes('Neil Gaimann'));
 
 console.log(neil_book.title);
 
-*/
+
 
 // filter() Method
 
@@ -529,3 +530,131 @@ console.log(even);
 
 const odd = arr.filter(n=>n%2===1);
 console.log(odd);
+
+var rem_books = books.filter(b=> b.rating > 4.3);
+
+console.log(rem_books);
+
+rem_books = books.filter(b=> b.author.includes('Neil Gaimann'));
+console.log(rem_books);
+
+
+// Every
+// Tests whether all the elements in the array pass the provided function. It returns a boolean value
+const words = ['dog','dig','log','bag','wag'];
+
+let res = words.every(w => w.length ===3);
+console.log(res);
+
+res = words.every(w => w[0]==='d');
+console.log(res);
+
+res = words.every(w => {
+    let last_word = w[w.length-1];
+    return last_word === 'g'
+});
+
+console.log(res);
+
+
+// Some 
+// Similar to the every, but return true if ANY of the array elements pass the test function
+
+const words = ['dog','dig','log','bag','wag'];
+
+let res = words.some(w => w.length ===3);
+console.log(res);
+
+res = words.some(w => w[0]==='d');
+console.log(res);
+
+res = words.some(w => {
+    let last_word = w[w.length-1];
+    return last_word === 'g'
+});
+
+console.log(res);
+
+
+const price = [400.50,3000,99.99,35.99,12.00,9500];
+
+price1 = price.slice();
+price2 = price.slice();
+price3 = price.slice();
+
+price1.sort();
+price2.sort((a,b)=>a-b);
+price3.sort((a,b)=>b-a);
+
+console.log(price1);
+console.log(price2);
+console.log(price3);
+
+const books = [
+                {
+                    title:"Good Omens",
+                    author:['Terry Protchett','Neil Gaimann'],
+                    rating: 4.25
+                },
+                {
+                    title:'Bone:The complete Edition',
+                    author:['Jeff Smitch'],
+                    rating:4.42
+                },
+                {
+                    title:'American Gods',
+                    author:['Neil Gaimann'],
+                    rating:4.11
+                },
+                {
+                    title:'A gentle in Moscow',
+                    author:['Amar Towles'],
+                    rating:4.36
+                }
+                ]
+            
+
+books.sort((a,b) => a.rating - b.rating);
+console.log(books);
+
+
+
+// Reduce() Method
+
+// Executes a reducer function on each element of the array,
+// resulting in a single value
+
+const nums = [1,2,3,4];
+
+const product = nums.reduce((total,curr) => total*curr);
+console.log(product);
+
+let grades = [89,96,58,77,62,93,81,99,73];
+
+const topgrade = grades.reduce((max,currVal) => Math.max(max,currVal));
+console.log(topgrade);
+
+const votes = ['y','y','n','y','n','y','n','n','n','y','y'];
+
+const ans = votes.reduce((tally,val)=>{
+    if(tally[val])
+        tally[val]++;
+    else
+        tally[val]=1;
+
+    return tally;
+},{})
+
+console.log(ans);
+
+*/
+
+const arr = [45,35,90,67];
+
+console.log(Math.max(...arr));
+
+const nums1 = [1,2,3,4];
+const nums2= [5,6,7];
+
+console.log([...nums1,...nums2,7,8,9]);
+
