@@ -647,7 +647,6 @@ const ans = votes.reduce((tally,val)=>{
 
 console.log(ans);
 
-*/
 
 const arr = [45,35,90,67];
 
@@ -657,4 +656,30 @@ const nums1 = [1,2,3,4];
 const nums2= [5,6,7];
 
 console.log([...nums1,...nums2,7,8,9]);
+
+
+function sumAll(){
+    let sum=0;
+
+    for(let i=0;i<arguments.length;i++){
+        sum+= arguments[i];
+    }
+
+    return sum;
+}
+
+
+console.log(sumAll(1,2,3,4));
+
+*/
+
+function sumAll(...arr){
+    let sum=0;
+
+    for(let i of arr) sum+=i;
+
+        return sum;
+}
+
+console.log(sumAll(1,2,3));
 
