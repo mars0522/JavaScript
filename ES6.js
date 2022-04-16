@@ -671,15 +671,24 @@ function sumAll(){
 
 console.log(sumAll(1,2,3,4));
 
-*/
 
+// rest operator
 function sumAll(...arr){
-    let sum=0;
+    // let sum=0;
 
-    for(let i of arr) sum+=i;
+    // for(let i of arr) sum+=i;
 
-        return sum;
+    //     return sum;
+
+    return arr.reduce((acc,curr)=> acc+curr);
 }
 
-console.log(sumAll(1,2,3));
+console.log(sumAll(1,2,3,4,5,6));
 
+// How it works with arrow function
+
+*/
+
+const addAll = (...nums)=> nums.reduce((acc,curr)=> acc+curr);
+
+console.log(addAll(1,2,3,4,5,6));
