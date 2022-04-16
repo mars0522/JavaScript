@@ -687,8 +687,40 @@ console.log(sumAll(1,2,3,4,5,6));
 
 // How it works with arrow function
 
-*/
+
 
 const addAll = (...nums)=> nums.reduce((acc,curr)=> acc+curr);
 
 console.log(addAll(1,2,3,4,5,6));
+
+*/
+
+// Array Destructuring
+
+const race = ['rohan','mohan','chohan'];
+
+const [person1,person2,person3]= race;
+
+const [pers1,...others]= race;
+
+const [,,p]= race;
+
+// Object destructuring
+
+const person={
+    name:"Varun",
+    age:24,
+    profession:"Software Engineer"
+}
+
+const {name,age,profession}= person;
+
+// parameter destructuring
+
+const fun = ({name,profession})=>{
+
+    console.log(name);
+    console.log(profession);
+
+}
+    
