@@ -726,5 +726,21 @@ const fun = ({name,profession})=>{
 
 */
 
+const person= {
+    fname:"Varun",
+    lname:"Singh",
 
+    getFullname(){
+        console.log(`${this.fname} ${this.lname}`);
+    },
+
+   fun(){
+
+        console.log(this);
+
+        setInterval(()=>{
+            console.log(this);
+        },2000)
+   }
+}
     
