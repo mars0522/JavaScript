@@ -693,7 +693,7 @@ const addAll = (...nums)=> nums.reduce((acc,curr)=> acc+curr);
 
 console.log(addAll(1,2,3,4,5,6));
 
-*/
+
 
 // Array Destructuring
 
@@ -723,4 +723,8 @@ const fun = ({name,profession})=>{
     console.log(profession);
 
 }
+
+*/
+
+
     
