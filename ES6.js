@@ -788,7 +788,7 @@ prom().then(()=>{
     console.log("Not resolved");
 })
 
-*/
+
 
 const fakeReq = (url)=>{
 
@@ -828,3 +828,39 @@ fakeReq('/details').then((res)=>{
     console.log('Status Code: ',res.status)
     console.log('Request rejected')
 })
+
+*/
+
+const fakeReq = (url) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const pages = {
+                '/users': [{ id: 1, username: 'Bilbo' }, { id: 2, username: 'Varun' }],
+                '/users/1': { id: 1, username: 'bilbo', upvotes: 360, city: 'Lisbon', topPostID: 454321 },
+                '/users/5': { id: 5, username: 'Varun', upvotes: 571, city: 'Honolulu' },
+                '/posts/454321': { title: 454321, title: 'Ladies and gentle man , very goodmorning to all' }
+            }
+
+            const data = pages[url];
+
+            if (data) { 
+                resolve({ status: 200, data });
+            } else {
+                reject({ status: 404 });
+            }
+        }, 1000);
+    })
+}
+
+fakeReq('/users').then((res) => {
+    const id = res.data[0].id;
+    return fakeReq(`/users/${id}`);
+}).then((res) => {
+    const topPostID = res.data.topPostID;
+    return fakeReq(`/posts/${topPostID}`);
+}).then(res => {
+    console.log(res);
+}).catch(err => {
+    console.log('OH NO ', err.status);
+})
+
