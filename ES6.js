@@ -724,7 +724,7 @@ const fun = ({name,profession})=>{
 
 }
 
-*/
+
 
 const person= {
     fname:"Varun",
@@ -744,3 +744,87 @@ const person= {
    }
 }
     
+
+
+//  Promises
+
+const p = new Promise((resolve,reject)=>{
+    const rand = Math.random();
+
+    if(rand < 0.5){
+        resolve();
+    }
+    else{
+        reject();
+    }
+})
+
+p.then(()=>{
+    console.log("Request Successful")
+}).catch(()=>{
+    console.log("Request Failed");
+})
+
+
+const prom = ()=>{
+
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            const x = Math.random();
+
+        if(x > 0.5){
+            resolve();
+        }
+        else{
+            reject();
+        }
+    },3000)
+    })
+}
+
+prom().then(()=>{
+    console.log("Resolved");
+}).catch(()=>{
+    console.log("Not resolved");
+})
+
+*/
+
+const fakeReq = (url)=>{
+
+    return new Promise((resolve,reject) =>{
+
+        setTimeout(()=>{
+            const pages = {
+
+                '/about':"This is about page",
+                '/details':[
+                    {id:1,name:'Varun'},
+                    {id:2,name:'Karan'}
+                ]
+
+            }
+
+            const data = pages[url];
+
+            if(data){
+                resolve({status: 200, data})
+            }else{
+                reject({status: 404});
+            }
+            
+        },2000)
+
+    })
+
+}
+
+fakeReq('/details').then((res)=>{
+
+    console.log('Status Code:',res.status);
+    console.log(res.data);
+
+}).catch((res)=>{
+    console.log('Status Code: ',res.status)
+    console.log('Request rejected')
+})
