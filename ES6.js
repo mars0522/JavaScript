@@ -892,3 +892,12 @@ fetch('https://restcountries.com/v3.1/alpha/pe').then(res => {
 })
 
 */
+
+// AXIOS
+axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list').then(res => {
+    for (drink of res.data.drinks) {
+       console.log(drink)
+   }
+}).catch(err => {
+    console.log(err)
+})
