@@ -829,7 +829,7 @@ fakeReq('/details').then((res)=>{
     console.log('Request rejected')
 })
 
-*/
+
 
 const fakeReq = (url) => {
     return new Promise((resolve, reject) => {
@@ -838,7 +838,7 @@ const fakeReq = (url) => {
                 '/users': [{ id: 1, username: 'Bilbo' }, { id: 2, username: 'Varun' }],
                 '/users/1': { id: 1, username: 'bilbo', upvotes: 360, city: 'Lisbon', topPostID: 454321 },
                 '/users/5': { id: 5, username: 'Varun', upvotes: 571, city: 'Honolulu' },
-                '/posts/454321': { title: 454321, title: 'Ladies and gentle man , very goodmorning to all' }
+                '/posts/454321': { postsID: 454321, title: 'Ladies and gentle man , very goodmorning to all' }
             }
 
             const data = pages[url];
@@ -864,3 +864,31 @@ fakeReq('/users').then((res) => {
     console.log('OH NO ', err.status);
 })
 
+
+
+fetch('https://restcountries.com/v3.1/alpha/pe').then(res => {
+    return res.json();
+}).then(data => {
+    for (border of data[0].borders) {
+        console.log(border);
+    }
+}).catch(err => {
+    console.log("Somethinng went Wrong.. ")
+    console.log(err)
+})
+
+
+fetch('https://restcountries.com/v3.1/alpha/pe').then(res => {
+    if (res.ok) {
+        res.json().then(data => {
+            console.log(data);
+        })
+    }
+    else {
+        throw new Error(`Status code :${res.status}`);
+    }
+}).catch(err => {
+    console.log(err); 
+})
+
+*/
