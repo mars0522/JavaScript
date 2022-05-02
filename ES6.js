@@ -891,7 +891,7 @@ fetch('https://restcountries.com/v3.1/alpha/pe').then(res => {
     console.log(err); 
 })
 
-*/
+
 
 // AXIOS
 axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list').then(res => {
@@ -901,3 +901,24 @@ axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list').then(re
 }).catch(err => {
     console.log(err)
 })
+
+*/
+
+// Async and Await
+
+async function getDrinks() {
+    try {
+        const res = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=listt');
+        for (ele of res.data.drinks) {
+            console.log(ele.strCategory);
+        }
+
+    }
+    catch (err) {
+
+            console.log("OOPs Error Occured",err);
+        
+    }
+}
+
+getDrinks();
